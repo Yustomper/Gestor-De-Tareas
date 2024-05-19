@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environget("ALLOWED_HOSTS").split(" ")
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -77,7 +77,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Crud.wsgi.application'
 
-PORT = int(os.environ.get('PORT', 8000))
+
 
 
 # Database
@@ -91,7 +91,8 @@ DATABASES = {
     )
 }
 
-
+DATABASES_URL=os.environ.get("DATABASES_URL")
+DATABASES['default']=dj_database_url.parse(DATABASES_URL)
 
 
 # Password validation
