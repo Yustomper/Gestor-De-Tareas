@@ -78,6 +78,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Crud.wsgi.application'
 
+PORT = int(os.environ.get('PORT', 8000))
+
 
 
 
