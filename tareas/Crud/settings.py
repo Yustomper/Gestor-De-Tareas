@@ -58,7 +58,7 @@ MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
-ROOT_URLCONF = 'Crud.urls'
+ROOT_URLCONF = 'tareas.urls'
 
 TEMPLATES = [
     {
@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Crud.wsgi.application'
+WSGI_APPLICATION = 'tareas.wsgi.application'
 
 PORT = int(os.environ.get('PORT', 8000))
 
